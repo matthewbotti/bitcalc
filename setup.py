@@ -6,6 +6,7 @@ setup(
     version='0.1',
     py_modules=['bitcalc'],
     install_requires=[
+        'requests',
         'Click',
     ],
     entry_points='''
