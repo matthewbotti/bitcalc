@@ -1,19 +1,22 @@
 import requests
 import click
 
+UNIT_CHOICES=['BTC', 'mBTC', 'uBTC', 'SAT', 'mSAT']
 
 # Fetch current Bitcoin price from Coindesk api
-def get_btc_price():
+def btc_price():
     response = requests.get('https://api.coindesk.com/v1/bpi/currentprice.json')
     price_data = response.json()
+
     return price_data['bpi']['USD']['rate_float']
 
 
 @click.command()
-def cli():
-    """Displays current price of Bitcoin."""
-
-    btc_price = get_btc_price()
+@click.argument('amount', type=float)
+@click.argument('start_unit', type=click.Choice(UNIT_CHOICES, case_sensitive=False))
+@click.argument('end_unit', type=click.Choice(UNIT_CHOICES, case_sensitive=False))
+def cli(amount, start_unit, end_unit):
+    """Convert amount between different Bitcoin unit types"""
 
     click.echo('Hello Sathoshi!')
-    click.echo(f'Current BTC Price: ${btc_price:,.2f}')
+    click.echo(f'{amount} {start_unit} {end_unit}')
