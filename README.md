@@ -19,7 +19,7 @@ Availabe Fiat units for conversion: USD
 
 *NOTE: units are case-insensitve*
 
-**Example Usage**
+### Example Usage
 
 ```
  bitcalc 0.000125 btc sat
@@ -27,9 +27,12 @@ Availabe Fiat units for conversion: USD
 
  bitcalc 55000 sat usd
  5.10 USD 
+
+ bitcalc 20 usd btc
+ 0.0022 BTC
 ```
 
-### TODO:
+## TODO:
 
 * Handle formatting for exponentail notation output 
 * Add support for multiple fiat currencies
