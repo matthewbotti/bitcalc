@@ -6,7 +6,7 @@ FIAT_CHOICES = ['USD']
 UNITS = {'BTC':1, 'mBTC':0.001, 'uBTC':0.000001, 'SAT':0.00000001, 'mSAT':0.00000000001}
 
 # Fetch current Bitcoin price from Coindesk api
-def btc_price():
+def get_btc_price():
     response = requests.get('https://api.coindesk.com/v1/bpi/currentprice.json')
     price_data = response.json()
 
@@ -22,12 +22,12 @@ def cli(start_amt, start_unit, end_unit):
 
     # convert from a bitcoin unit to a fiat unit
     if end_unit in FIAT_CHOICES:
-        end_amt = start_amt * UNITS[start_unit] * btc_price()    
+        end_amt = start_amt * UNITS[start_unit] * get_btc_price()    
         click.echo(f'{end_amt:,.2f} {end_unit}')
 
     # convert from a fiat unit to a bitcoin unit
     elif start_unit in FIAT_CHOICES:
-        end_amt = start_amt / btc_price() / UNITS[end_unit] 
+        end_amt = start_amt / get_btc_price() / UNITS[end_unit] 
         click.echo(f'{end_amt:,.4f} {end_unit}')
 
     # convert from one bitcoin unit to another bitcoin unit
