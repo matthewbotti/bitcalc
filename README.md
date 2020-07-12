@@ -9,13 +9,13 @@ bitcalc takes three arguments with the first being a
 numerical amount to be converted, the starting unit type, 
 and the end unit type.
 
-``` bitcalc START_AMT START_UNIT END_UNIT ```
+``` 
+ bitcalc START_AMT START_UNIT END_UNIT
+```
 
-Availabe units for conversion:
-    BTC, mBTC, uBTC, sat, msat
+Availabe units for conversion: BTC, mBTC, uBTC, sat, msat
 
-Availabe Fiat for conversion:
-    USD
+Availabe Fiat for conversion: USD
 
 *NOTE: units are case-insensitve*
 
@@ -28,3 +28,10 @@ Availabe Fiat for conversion:
  bitcalc 55000 sat usd
  5.10 USD 
 ```
+
+### TODO:
+
+* Handle formatting for exponentail notation output 
+* Add support for multiple fiat currencies
+* Add support for multiple end unit output
+
