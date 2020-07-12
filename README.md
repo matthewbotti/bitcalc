@@ -13,9 +13,9 @@ and the end unit type.
  bitcalc START_AMT START_UNIT END_UNIT
 ```
 
-Availabe units for conversion: BTC, mBTC, uBTC, sat, msat
+Availabe Bitcoin units for conversion: BTC, mBTC, uBTC, sat, msat
 
-Availabe Fiat for conversion: USD
+Availabe Fiat units for conversion: USD
 
 *NOTE: units are case-insensitve*
 
@@ -23,7 +23,7 @@ Availabe Fiat for conversion: USD
 
 ```
  bitcalc 0.000125 btc sat
- 12,500.0 SAT
+ 12,500.0 sat
 
  bitcalc 55000 sat usd
  5.10 USD 
