@@ -1,9 +1,9 @@
 import requests
 import click
 
-UNIT_CHOICES = ['BTC', 'mBTC', 'uBTC', 'SAT', 'mSAT']
+UNIT_CHOICES = ['BTC', 'mBTC', 'uBTC', 'sat', 'msat']
 FIAT_CHOICES = ['USD']
-UNITS = {'BTC':1, 'mBTC':0.001, 'uBTC':0.000001, 'SAT':0.00000001, 'mSAT':0.00000000001}
+UNITS = {'BTC':1, 'mBTC':0.001, 'uBTC':0.000001, 'sat':0.00000001, 'msat':0.00000000001}
 
 # Fetch current Bitcoin price from Coindesk api
 def get_btc_price():
