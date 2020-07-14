@@ -3,6 +3,19 @@
 bitcalc is a command-line tool for converting an amount between
 different Bitcoin units and fiat currencies.
 
+## Installation
+
+Current installation method requires setuptools.
+This should install to the users local path in home directory.
+
+```
+ git clone https://github.com/matthewbotti/bitcalc
+ 
+ cd bitcalc
+
+ python3 setup.py install --user
+```
+
 ## Usage
 
 bitcalc takes three arguments with the first being a 
