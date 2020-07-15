@@ -50,4 +50,5 @@ Availabe Fiat units for conversion: USD
 * Handle formatting for exponentail notation output 
 * Add support for multiple fiat currencies
 * Add support for multiple end unit output
+* Add support for other cryptocurrencies
 
