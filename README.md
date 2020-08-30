@@ -48,8 +48,7 @@ Availabe Fiat units for conversion: USD
 ## TODO:
 
 * Add raw-output option
+* Add error message when can't retrieve price api
 * Handle formatting for exponentail notation output 
 * Add support for multiple fiat currencies
-* Add support for multiple end unit output
-* Add support for other cryptocurrencies
 
