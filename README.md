@@ -53,7 +53,6 @@ Availabe Fiat units for conversion: USD
 
 ## TODO:
 
-* Add error message when can't retrieve price api
 * Handle formatting for exponentail notation output 
 * Add support for multiple fiat currencies
 
