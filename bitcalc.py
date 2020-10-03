@@ -1,7 +1,6 @@
 import requests
 import click
 
-UNIT_CHOICES = ['BTC', 'mBTC', 'uBTC', 'sat', 'msat']
 FIAT_CHOICES = ['USD']
 UNITS = {'BTC':1, 'mBTC':0.001, 'uBTC':0.000001, 'sat':0.00000001, 'msat':0.00000000001}
 
@@ -15,8 +14,8 @@ def get_btc_price():
 
 @click.command()
 @click.argument('start_amt', type=float)
-@click.argument('start_unit', type=click.Choice(UNIT_CHOICES+FIAT_CHOICES, case_sensitive=False))
-@click.argument('end_unit', type=click.Choice(UNIT_CHOICES+FIAT_CHOICES, case_sensitive=False))
+@click.argument('start_unit', type=click.Choice(list(UNITS.keys())+FIAT_CHOICES, case_sensitive=False))
+@click.argument('end_unit', type=click.Choice(list(UNITS.keys())+FIAT_CHOICES, case_sensitive=False))
 def cli(start_amt, start_unit, end_unit):
     """Convert start_amt between different Bitcoin & fiat unit types"""
 
