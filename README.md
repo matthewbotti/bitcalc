@@ -20,10 +20,13 @@ This should install to the users local path in home directory.
 
 bitcalc takes three arguments with the first being a 
 numerical amount to be converted, the starting unit type, 
-and the end unit type.
+and the end unit type. The `-r` or `--raw_output` option
+can be used to display output value without commas or
+unit codes.
 
 ``` 
  bitcalc START_AMT START_UNIT END_UNIT
+ bitcalc -r START_AMT START_UNIT END_UNIT
 ```
 
 Availabe Bitcoin units for conversion: BTC, mBTC, uBTC, sat, msat
@@ -43,6 +46,9 @@ Availabe Fiat units for conversion: USD
 
  bitcalc 20 usd btc
  0.0022 BTC
+
+ bitcalc -r 6.15 btc usd
+ 64931.11
 ```
 
 ## TODO:
