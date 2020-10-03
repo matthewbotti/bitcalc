@@ -33,3 +33,7 @@ def cli(start_amt, start_unit, end_unit):
     else:
         end_amt = (UNITS[start_unit] / UNITS[end_unit]) * start_amt
         click.echo(f'{end_amt:,} {end_unit}')    
+
+
+if __name__ == '__main__':
+    cli()
