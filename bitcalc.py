@@ -13,26 +13,36 @@ def get_btc_price():
 
 
 @click.command()
+@click.option('--raw_output', '-r', is_flag=True, help='Give output without commas or unit codes')
 @click.argument('start_amt', type=float)
 @click.argument('start_unit', type=click.Choice(list(UNITS.keys())+FIAT_CHOICES, case_sensitive=False))
 @click.argument('end_unit', type=click.Choice(list(UNITS.keys())+FIAT_CHOICES, case_sensitive=False))
-def cli(start_amt, start_unit, end_unit):
+def cli(raw_output, start_amt, start_unit, end_unit):
     """Convert start_amt between different Bitcoin & fiat unit types"""
 
     # convert from a bitcoin unit to a fiat unit
     if end_unit in FIAT_CHOICES:
         end_amt = start_amt * UNITS[start_unit] * get_btc_price()    
-        click.echo(f'{end_amt:,.2f} {end_unit}')
+        if raw_output:
+            click.echo(end_amt)
+        else:
+            click.echo(f'{end_amt:,.2f} {end_unit}')
 
     # convert from a fiat unit to a bitcoin unit
     elif start_unit in FIAT_CHOICES:
         end_amt = start_amt / get_btc_price() / UNITS[end_unit] 
-        click.echo(f'{end_amt:,.4f} {end_unit}')
+        if raw_output:
+            click.echo(end_amt)
+        else:
+            click.echo(f'{end_amt:,.4f} {end_unit}')
 
     # convert from one bitcoin unit to another bitcoin unit
     else:
         end_amt = (UNITS[start_unit] / UNITS[end_unit]) * start_amt
-        click.echo(f'{end_amt:,} {end_unit}')    
+        if raw_output:
+            click.echo(end_amt)
+        else:
+            click.echo(f'{end_amt:,} {end_unit}')    
 
 
 if __name__ == '__main__':
