@@ -6,11 +6,10 @@ UNITS = {'BTC':1, 'mBTC':0.001, 'uBTC':0.000001, 'sat':0.00000001, 'msat':0.0000
 
 # Fetch current Bitcoin price from Coindesk api
 def get_btc_price():
-    response = requests.get('https://api.coindesk.com/v1/bpi/currentprice.json')
     try:
-        response.raise_for_status()
-    except Exception as exc:
-        print(f'Could not retreive Bitcoin price information:\n{exc}')        
+        response = requests.get('https://api.coindesk.com/v1/bpi/currentprice.json')
+    except Exception:
+        print('ERROR: Could not retreive Bitcoin price data from API')        
         exit()
     price_data = response.json()
 

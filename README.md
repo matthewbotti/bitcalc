@@ -53,8 +53,7 @@ Availabe Fiat units for conversion: USD
 
 ## TODO:
 
-* Handle Error api request error when no Internet connection
-* Fix setup.py issue not install all required packages
+* Fix setup.py issue not installing all required packages
 * Handle formatting for exponentail notation output 
 * Add support for multiple fiat currencies
 
